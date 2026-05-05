@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FACTS | DETAILS</title>
+    <style>
+        :root { 
+            --accent: #ff4757; 
+            --dark: #121212; 
+            --gray: #222;
+        }
+        
+        * { box-sizing: border-box; }
+        body { 
+            margin: 0; 
+            font-family: 'Inter', -apple-system, sans-serif; 
+            background: var(--dark); 
+            color: white; 
+            overflow-x: hidden; 
+        }
+
+        /* Анимация появления */
+        .fade-in { animation: fadeIn 0.6s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* Боковое меню (как на главной для единства стиля) */
+        .nav-bar { 
+            position: fixed; 
+            left: 0; top: 0; 
+            height: 100vh; width: 60px; 
+            border-right: 1px solid #333; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            z-index: 10; 
+            background: var(--dark); 
+        }
+        .nav-bar a { 
+            writing-mode: vertical-rl; 
+            transform: rotate(180deg); 
+            text-decoration: none; 
+            color: #555; 
+            font-size: 11px; 
+            letter-spacing: 4px; 
+            margin: 20px 0; 
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .nav-bar a:hover, .nav-bar a.active { color: white; }
+
+        /* Контейнер с фактами */
+        .grid-wrapper { 
+            margin-left: 60px; 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); /* Два больших столбца */
+            gap: 1px; 
+            background: #333; /* Цвет линий сетки */
+            border-bottom: 1px solid #333;
+        }
+        
+        .fact-card { 
+            background: var(--dark); 
+            padding: 60px 40px; 
+            min-height: 250px; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; 
+            transition: 0.4s; 
+        }
+        
+        .fact-card:hover { background: #1a1a1a; }
+        
+        .fact-card h3 { 
+            color: var(--accent); 
+            font-size: 14px; 
+            letter-spacing: 3px; 
+            margin: 0 0 20px 0; 
+            font-weight: 900;
+        }
+        
+        .fact-card p { 
+            font-size: 22px; 
+            line-height: 1.4; 
+            margin: 0; 
+            font-weight: 300;
+            max-width: 400px;
+        }
+
+        /* Футер страницы */
+        .details-footer {
+            margin-left: 60px;
+            padding: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-btn { 
+            color: white; 
+            text-decoration: none; 
+            font-size: 14px; 
+            font-weight: bold; 
+            border: 2px solid var(--accent); 
+            padding: 15px 40px; 
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .back-btn:hover { 
+            background: var(--accent); 
+            box-shadow: 0 0 20px rgba(255, 71, 87, 0.4);
+        }
+
+        /* Адаптивность для мобилок */
+        @media (max-width: 768px) {
+            .grid-wrapper { grid-template-columns: 1fr; }
+            .fact-card { padding: 40px 20px; min-height: 200px; }
+        }
+    </style>
+</head>
+<body class="fade-in">
+
+    <!-- Навигация -->
+    <div class="nav-bar">
+        <a href="index.html">INDEX</a>
+        <a href="details.html" class="active">DETAILS</a>
+    </div>
+
+    <!-- Сетка фактов -->
+    <div class="grid-wrapper">
+        <div class="fact-card">
+            <h3>01 / NETWORK</h3>
+            <p>Belarus has a vast network of over 7,000 public libraries.</p>
+        </div>
+        <div class="fact-card">
+            <h3>02 / HUB</h3>
+            <p>The National Library of Belarus is the main cultural hub.</p>
+        </div>
+        <div class="fact-card">
+            <h3>03 / FORM</h3>
+            <p>Its building in Minsk is shaped like a rhombicuboctahedron.</p>
+        </div>
+        <div class="fact-card">
+            <h3>04 / ARCHIVE</h3>
+            <p>The library holds millions of rare books and manuscripts.</p>
+        </div>
+        <div class="fact-card">
+            <h3>05 / ACCESS</h3>
+            <p>Digital services allow citizens to access resources from home.</p>
+        </div>
+        <div class="fact-card">
+            <h3>06 / ROOTS</h3>
+            <p>Regional libraries focus on local history and unique folklore.</p>
+        </div>
+        <div class="fact-card">
+            <h3>07 / GLOBAL</h3>
+            <p>Many libraries host international exhibitions and workshops.</p>
+        </div>
+        <div class="fact-card">
+            <h3>08 / GROWTH</h3>
+            <p>The system supports lifelong learning for all ages.</p>
+        </div>
+        <div class="fact-card">
+            <h3>09 / YOUTH</h3>
+            <p>Libraries are becoming modern community centers for youth.</p>
+        </div>
+        <div class="fact-card">
+            <h3>10 / MISSION</h3>
+            <p>Preserving the national language is a key mission.</p>
+        </div>
+    </div>
+
+    <!-- Кнопка возврата -->
+    <div class="details-footer">
+        <span style="color: #444; letter-spacing: 2px;">END OF DETAILS</span>
+        <a href="index.html" class="back-btn">Return Home</a>
+    </div>
+
+</body>
+</html>

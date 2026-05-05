@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BELARUS | ARCHIVE</title>
+    <style>
+        :root { --accent: #ff4757; --dark: #121212; }
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: 'Inter', sans-serif; background: #fff; color: var(--dark); overflow: hidden; }
+
+        /* Анимация появления страницы */
+        .fade-in { animation: fadeIn 1s ease-in forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Боковая навигация */
+        .nav-bar { position: fixed; left: 40px; top: 0; height: 100vh; width: 60px; border-right: 1px solid #eee; display: flex; flex-direction: column; justify-content: center; z-index: 10; }
+        .nav-bar a { writing-mode: vertical-rl; transform: rotate(180deg); text-decoration: none; color: #ccc; font-size: 11px; letter-spacing: 4px; margin: 20px 0; transition: 0.4s; }
+        .nav-bar a.active { color: var(--dark); font-weight: bold; }
+        .nav-bar a:hover { color: var(--accent); }
+
+        /* Контент */
+        main { margin-left: 100px; display: grid; grid-template-columns: 1.2fr 1fr; height: 100vh; }
+        
+        .hero-text { padding: 10% 5%; display: flex; flex-direction: column; justify-content: center; }
+        .hero-text h1 { font-size: 7vw; line-height: 0.8; margin: 0; letter-spacing: -3px; }
+        .hero-text p { max-width: 400px; margin: 30px 0; line-height: 1.8; color: #666; font-size: 15px; }
+
+        .hero-image { background: url('1.jpg') center/cover no-repeat; position: relative; }
+        .hero-image::after { content: "BELARUS"; position: absolute; bottom: 40px; right: -40px; font-size: 120px; font-weight: 900; color: rgba(255,255,255,0.2); pointer-events: none; }
+
+        /* Кнопка перехода */
+        .explore-btn { width: 60px; height: 60px; background: var(--dark); color: white; display: flex; align-items: center; justify-content: center; text-decoration: none; border-radius: 50%; transition: 0.4s; }
+        .explore-btn:hover { background: var(--accent); transform: scale(1.1) rotate(90deg); }
+    </style>
+</head>
+<body class="fade-in">
+
+<div class="nav-bar">
+    <a href="index.html" class="active">INDEX</a>
+    <a href="details.html">DETAILS</a>
+</div>
+
+<main>
+    <section class="hero-text">
+        <h1>THE<br>BOOK<br><span style="color:var(--accent)">CORE</span></h1>
+        <p>This digital space is a tribute to the Belarusian library system—a massive network of knowledge that bridges historical manuscripts and futuristic architecture.</p>
+        <a href="details.html" class="explore-btn">→</a>
+    </section>
+    <section class="hero-image"></section>
+</main>
+
+</body>
+</html>
